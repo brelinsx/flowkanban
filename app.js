@@ -9,7 +9,7 @@ async function loadTasks() {
         const div = document.createElement("div");
         div.className = "card";
         div.dataset.id = t.id;
-        div.innerHTML = "<b>" + t.title + "</b><div><span>" + t.priority + "</span> | " + t.duedate + "</div>";
+        div.innerHTML = "<b>" + t.title + "</b><div><span class='badge badge-" + t.priority + "'>" + t.priority + "</span> | " + t.duedate + "</div>";
         if (t.status === "todo") document.getElementById("list-todo").appendChild(div);
         if (t.status === "doing") document.getElementById("list-doing").appendChild(div);
         if (t.status === "done") document.getElementById("list-done").appendChild(div);
@@ -31,3 +31,15 @@ document.getElementById("tasksForm").onsubmit = async (e) => {
     modal.classList.add("hidden");
     loadTasks();
 };
+
+for (let status of ["todo", "doing", "done"]) {
+    new Sortable(document.getElementById("list-" + status), {
+        group: "kanban",
+        onEnd: async (e) => {
+            const id = e.item.dataset.id;
+            const newStatus = e.to.id.replace("list-", "");
+            await fetch(API + "/tasks/" + id, { method: "PATCH", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ status: newStatus})});
+            loadTasks();
+        }
+    })
+}
