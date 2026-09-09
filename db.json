@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Diseñar maqueta en Figma",
+      "description": "Crear wireframes y prototipos del tablero.",
+      "priority": "Alta",
+      "duedate": "2026-09-15",
+      "status": "todo"
+    },
+    {
+      "id": "2",
+      "title": "Configurar json-server",
+      "description": "Iniciar API con tareas y comentarios.",
+      "priority": "Media",
+      "duedate": "2026-09-10",
+      "status": "doing"
+    }
+  ],
+  "comments": [
+    {
+      "id": "101",
+      "taskId": "1",
+      "author": "Ana Gomez",
+      "text": "Incluir hover en modal.",
+      "createdat": "2026-09-08T10:30:00Z"
+    }
+  ]
+}
