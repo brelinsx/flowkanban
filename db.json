@@ -6,15 +6,31 @@
       "description": "Crear wireframes y prototipos del tablero.",
       "priority": "Alta",
       "duedate": "2026-09-15",
-      "status": "todo"
+      "status": "done"
     },
     {
-      "id": "2",
-      "title": "Configurar json-server",
-      "description": "Iniciar API con tareas y comentarios.",
+      "title": "Prueba",
+      "description": "",
       "priority": "Media",
-      "duedate": "2026-09-10",
-      "status": "doing"
+      "duedate": "2026-09-11",
+      "status": "doing",
+      "id": "KwjPnKP"
+    },
+    {
+      "title": "Prueba2",
+      "description": "",
+      "priority": "Baja",
+      "duedate": "2026-09-18",
+      "status": "done",
+      "id": "dSBxCQy"
+    },
+    {
+      "title": "Diseñar maqueta en Figma",
+      "description": "Crear wireframes y sprototipos del tablero.",
+      "priority": "Alta",
+      "duedate": "2026-09-15",
+      "status": "todo",
+      "id": "_ZJVLCM"
     }
   ],
   "comments": [
