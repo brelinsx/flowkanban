@@ -1,0 +1,27 @@
+{
+  "name": "kanban-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brelinsx/flowkanban.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brelinsx/flowkanban/issues"
+  },
+  "homepage": "https://github.com/brelinsx/flowkanban#readme",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
