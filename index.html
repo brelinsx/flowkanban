@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowKanban</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- HEADER -->
+    <header>
+        <button id="menuBtn" aria-label="Abrir menu">☰</button>
+        <h1>FlowKanban</h1>
+        <label for="search" class="sr">Buscar</label>
+        <input id="search" type="search" placeholder="Buscar por titulo...">
+        <button id="newBtn">+ Nueva tarea</button>
+    </header>
+<!--Nav-->
+    <nav id="stats" aria-label="Estadisticas">
+        <span>Por hacer: <b id="count-todo">0</b></span>
+        <span>En proceso: <b id="count-doing">0</b></span>
+        <span>Finalizado: <b id="count-done">0</b></span>
+    </nav>
+<!--main-->
+    <main id="board">
+        <section class="column" data-status="todo"><h2>Por hacer</h2><div class="list" id="list-todo"></div></section>
+        <section class="column" data-status="doing"><h2>En proceso</h2><div class="list" id="list-doing"></div></section>
+        <section class="column" data-status="done"><h2>Finalizado</h2><div class="list" id="list-done"></div></section>
+    </main>
+<!--div-->
+    <div id="modal" class="hidden">
+        <form id="taskForm">
+            <h3 id="modalTitle">Nueva Tarea</h3>
+            <label>Titulo<input id="fTitle" required></label>
+            <label>Descripcion <textarea id="fDesc"></textarea></label>
+            <label>Prioridad<select id="fPriority"><option>Baja</option><option selected>Media</option><option>Alta</option></select></label>
+            <label>Fecha<input id="fDate" type="date"></label>
+            <button type="submit">Guardar</button>
+            <button type="button" id="closeModal">Cerrar</button>
+            <button type="button" id="deleteBtn" class="hidden">Borrar</button>
+        </form>
+        <div id="comments"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
