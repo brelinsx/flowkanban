@@ -26,3 +26,6 @@ POST /comments añade con createdat
 
 # Estructura
 index.html, styles.css, app.js, db.json con duedate y createdat en minusculas spec.
+
+# Docs diseno en docs/.
+App: docs/app-board.png y docs/app-modal.png
