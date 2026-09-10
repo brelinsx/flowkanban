@@ -25,9 +25,7 @@ async function loadTasks() {
 const modal = document.getElementById("modal");
 
 document.getElementById("newBtn").onclick = () => {
-  editingId = null;
-  editingStatus = "todo";
-  document.getElementById("modalTitle").textContent = "Nueva tarea";
+  editingId = null; editingStatus = "todo";
   document.getElementById("tasksForm").reset();
   document.getElementById("deleteBtn").classList.add("hidden");
   document.getElementById("comments").innerHTML = "";
@@ -51,7 +49,7 @@ document.getElementById("tasksForm").onsubmit = async (e) => {
       body: JSON.stringify({ ...data, status: editingStatus })
     });
   } else {
-    data.status = "todo";
+    data.status = editingStatus;
     await fetch(API + "/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -139,3 +137,15 @@ document.getElementById("menuBtn").onclick = () => {
 };
 
 loadTasks();
+
+for (let btn of document.querySelectorAll(".addCol")) {
+  btn.onclick = () => {
+    editingId = null;
+    editingStatus = btn.dataset.status;
+    document.getElementById("modalTitle").textContent = "Nueva tarea";
+    document.getElementById("tasksForm").reset();
+    document.getElementById("deleteBtn").classList.add("hidden");
+    document.getElementById("comments").innerHTML = "";
+    modal.classList.remove("hidden");
+  };
+}

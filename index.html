@@ -23,9 +23,9 @@
     </nav>
 <!--main-->
     <main id="board">
-        <section class="column" data-status="todo"><h2>Por hacer</h2><div class="list" id="list-todo"></div></section>
-        <section class="column" data-status="doing"><h2>En proceso</h2><div class="list" id="list-doing"></div></section>
-        <section class="column" data-status="done"><h2>Finalizado</h2><div class="list" id="list-done"></div></section>
+        <section class="column" data-status="todo"><div class="col-head"><h2>Por hacer</h2><button class="addCol" data-status="todo">+ Añadir</button></div><div class="list" id="list-todo"></div></section>
+        <section class="column" data-status="doing"><div class="col-head"><h2>En proceso</h2><button class="addCol" data-status="doing">+ Añadir</button></div><div class="list" id="list-doing"></div></section>
+        <section class="column" data-status="done"><div class="col-head"><h2>Finalizado</h2><button class="addCol" data-status="done">+ Añadir</button></div><div class="list" id="list-done"></div></section>
     </main>
 <!--div-->
     <div id="modal" class="hidden">
