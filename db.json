@@ -1,45 +1,61 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Diseñar maqueta en Figma",
-      "description": "Crear wireframes y prototipos del tablero.",
+      "title": "Diseñar maqueta",
+      "description": "Wireframes del tablero.",
       "priority": "Alta",
       "duedate": "2026-09-15",
-      "status": "done"
+      "status": "done",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Configurar API",
+      "description": "Iniciar json-server.",
+      "priority": "Media",
+      "duedate": "2026-09-10",
+      "status": "doing"
     },
     {
       "title": "Prueba",
-      "description": "",
-      "priority": "Media",
-      "duedate": "2026-09-11",
-      "status": "doing",
-      "id": "KwjPnKP"
-    },
-    {
-      "title": "Prueba2",
-      "description": "",
-      "priority": "Baja",
-      "duedate": "2026-09-18",
-      "status": "done",
-      "id": "dSBxCQy"
-    },
-    {
-      "title": "Diseñar maqueta en Figma",
-      "description": "Crear wireframes y sprototipos del tablero.",
+      "description": "Esta es una prueba",
+      "assignee": "Juan Pérez",
       "priority": "Alta",
-      "duedate": "2026-09-15",
+      "duedate": "2026-09-08",
       "status": "todo",
-      "id": "_ZJVLCM"
+      "id": "SxWi9A0"
+    },
+    {
+      "title": "Prueba 2",
+      "description": "Esta es la prueba n2",
+      "assignee": "Ana Gómez",
+      "priority": "Media",
+      "duedate": "2026-09-16",
+      "status": "doing",
+      "id": "VjJ_vdS"
     }
   ],
   "comments": [
     {
       "id": "101",
       "taskId": "1",
-      "author": "Ana Gomez",
-      "text": "Incluir hover en modal.",
+      "author": "Ana",
+      "text": "Incluir hover.",
       "createdat": "2026-09-08T10:30:00Z"
+    },
+    {
+      "taskId": "1",
+      "author": "Bre",
+      "text": "Cambia a Finalizado",
+      "createdat": "2026-09-10T12:08:15.266Z",
+      "id": "5PXB9lc"
+    },
+    {
+      "taskId": "SxWi9A0",
+      "author": "Brelin",
+      "text": "Prueba 1",
+      "createdat": "2026-09-13T12:20:35.895Z",
+      "id": "8H702tH"
     }
   ]
 }

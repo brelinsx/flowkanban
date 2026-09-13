@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlowKanban</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- HEADER -->
     <header>
         <button id="menuBtn" aria-label="Abrir menú">☰</button>
-        <h1>FlowKanban</h1>
-        <label for="search" class="sr">Buscar</label>
-        <input id="search" type="search" placeholder="Buscar por titulo...">
+        <div class="logo-container">
+            <img src="docs/logo.png" alt="Logo FlowKanban" id="main-logo">
+        </div>
+        <input id="search" type="search" placeholder="Buscar por título...">
         <button id="newBtn">+ Nueva tarea</button>
     </header>
-<!--Nav-->
-    <nav id="stats" aria-label="Estadisticas">
-        <span>Por hacer: <b id="count-todo">0</b></span>
-        <span>En proceso: <b id="count-doing">0</b></span>
-        <span>Finalizado: <b id="count-done">0</b></span>
-    </nav>
+<!-- Stats & Filter Bar (Level 2) -->
+    <div id="stats" aria-label="Estadisticas y filtros">
+        <div class="stats-left">
+            <span>Por hacer: <b id="count-todo">0</b></span>
+            <span>En proceso: <b id="count-doing">0</b></span>
+            <span>Finalizado: <b id="count-done">0</b></span>
+        </div>
+        <div class="filter-right">
+            <label for="filterPriority" style="color: #64748B; font-size: 0.85rem; margin-right: 6px;"><i class="fa-solid fa-filter"></i></label>
+            <select id="filterPriority">
+                <option value="">Todas las prioridades</option>
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+            </select>
+        </div>
+    </div>
 <!--main-->
     <main id="board">
-        <section class="column" data-status="todo"><h2>Por hacer</h2><div class="list" id="list-todo"></div></section>
-        <section class="column" data-status="doing"><h2>En proceso</h2><div class="list" id="list-doing"></div></section>
-        <section class="column" data-status="done"><h2>Finalizado</h2><div class="list" id="list-done"></div></section>
+        <section class="column" data-status="todo"><div class="col-head"><h2>Por hacer</h2><button class="addCol" data-status="todo">+ Añadir</button></div><div class="list" id="list-todo"></div></section>
+        <section class="column" data-status="doing"><div class="col-head"><h2>En proceso</h2><button class="addCol" data-status="doing">+ Añadir</button></div><div class="list" id="list-doing"></div></section>
+        <section class="column" data-status="done"><div class="col-head"><h2>Finalizado</h2><button class="addCol" data-status="done">+ Añadir</button></div><div class="list" id="list-done"></div></section>
     </main>
 <!--div-->
     <div id="modal" class="hidden">
@@ -33,11 +46,19 @@
             <h3 id="modalTitle">Nueva Tarea</h3>
             <label>Titulo<input id="fTitle" required></label>
             <label>Descripcion <textarea id="fDesc"></textarea></label>
-            <label>Prioridad<select id="fPriority"><option>Baja</option><option selected>Media</option><option>Alta</option></select></label>
-            <label>Fecha<input id="fDate" type="date"></label>
-            <button type="submit">Guardar</button>
-            <button type="button" id="closeModal">Cerrar</button>
-            <button type="button" id="deleteBtn" class="hidden">Borrar</button>
+            <label>Responsable<select id="fAssignee"><option value="">Sin asignar</option><option>Ana Gómez</option><option>Carlos Ruiz</option><option>Juan Pérez</option></select></label>
+            <div class="form-row-inline">
+                <label>Prioridad<select id="fPriority"><option>Baja</option><option selected>Media</option><option>Alta</option></select></label>
+                <label>Fecha<input id="fDate" type="date"></label>
+                <label>Estado<select id="fStatus"><option value="todo">Por hacer</option><option value="doing">En proceso</option><option value="done">Finalizado</option></select></label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="deleteBtn" class="hidden"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                <div class="modal-footer-right">
+                    <button type="button" id="closeModal">Cancelar</button>
+                    <button type="submit">Guardar</button>
+                </div>
+            </div>
         </form>
         <div id="comments"></div>
     </div>
