@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "title": "Diseñar maqueta",
-      "description": "Wireframes del tablero.",
-      "priority": "Alta",
-      "duedate": "2026-09-15",
-      "status": "done",
-      "id": "1"
-    },
-    {
       "id": "2",
       "title": "Configurar API",
       "description": "Iniciar json-server.",
@@ -22,7 +14,7 @@
       "assignee": "Juan Pérez",
       "priority": "Alta",
       "duedate": "2026-09-08",
-      "status": "todo",
+      "status": "done",
       "id": "SxWi9A0"
     },
     {
@@ -31,25 +23,11 @@
       "assignee": "Ana Gómez",
       "priority": "Media",
       "duedate": "2026-09-16",
-      "status": "doing",
+      "status": "todo",
       "id": "VjJ_vdS"
     }
   ],
   "comments": [
-    {
-      "id": "101",
-      "taskId": "1",
-      "author": "Ana",
-      "text": "Incluir hover.",
-      "createdat": "2026-09-08T10:30:00Z"
-    },
-    {
-      "taskId": "1",
-      "author": "Bre",
-      "text": "Cambia a Finalizado",
-      "createdat": "2026-09-10T12:08:15.266Z",
-      "id": "5PXB9lc"
-    },
     {
       "taskId": "SxWi9A0",
       "author": "Brelin",

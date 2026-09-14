@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-body { font-family: Inter, system-ui, sans-serif; margin: 0; background: #F8FAFC; color: #0F172A; }
+body { font-family: Inter, system-ui, sans-serif; margin: 0; background: #0F172A; color: #0F172A; min-height: 100vh; }
 
 /* Logo Styles */
 .logo-container { display: flex; align-items: center; }
@@ -18,12 +18,12 @@ header { display: flex; align-items: center; padding: 12px 20px; background: whi
 .filter-right { display: flex; align-items: center; }
 #filterPriority { padding: 6px 12px; border-radius: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; font-size: 0.85rem; color: #0F172A; }
 
-/* Board & Columns */
-#board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 16px 20px; }
-.column { background: #EDF2F7; border-radius: 14px; padding: 14px; min-height: 260px; }
-.column h2 { font-size: 0.95rem; margin: 4px 4px 12px; color: #1E293B; font-weight: 700; }
+/* Board & Columns (Matte Dark Theme Floating Cards) */
+#board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 20px; }
+.column { background: #1E293B; border-radius: 14px; padding: 14px; min-height: 260px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+.column h2 { font-size: 0.95rem; margin: 4px 4px 12px; color: #F8FAFC; font-weight: 700; }
 .list { min-height: 160px; display: flex; flex-direction: column; gap: 10px; }
-.list:empty::after { content: "Arrastra tarjetas aquí"; color: #64748B; font-size: .82rem; text-align: center; padding: 20px; border: 2px dashed #CBD5E1; border-radius: 10px; background: rgba(255,255,255,0.4); }
+.list:empty::after { content: "Arrastra tarjetas aquí"; color: #94A3B8; font-size: .82rem; text-align: center; padding: 20px; border: 2px dashed #475569; border-radius: 10px; background: rgba(15, 23, 42, 0.4); }
 
 /* Card Style */
 .card { background: white; padding: 14px 16px; border-radius: 12px; box-shadow: 0 1px 3px rgba(15,23,42,0.08); cursor: grab; transition: transform .15s, box-shadow .15s; }
@@ -35,14 +35,15 @@ header { display: flex; align-items: center; padding: 12px 20px; background: whi
 .badge-Baja { background: #DCFCE7; color: #166534; }
 .drag-ghost { opacity: .6; background: #DBEAFE; }
 .col-head { display: flex; justify-content: space-between; align-items: center; }
-.addCol { background: #DBEAFE; color: #1D4ED8; border: 0; border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+.addCol { background: #334155; color: #93C5FD; border: 0; border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+.addCol:hover { background: #475569; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; }
 
 /* Modal Layout */
 #modal {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(15, 23, 42, 0.75);
     display: flex;
     flex-direction: column;
     justify-content: center;
